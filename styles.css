@@ -1,0 +1,375 @@
+body, html {
+    margin: 0;
+    padding: 0 10px; 
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: #333;
+}
+
+header {
+    padding: 0; 
+    margin: 0 -20px; 
+    width: calc(100% + 40px); 
+}
+
+h1, h2 {
+    padding: 0.5em 10px; 
+}
+
+h1 {
+    color: white;
+    font-size: 2em;
+    text-align: center;
+}
+
+strong {
+    color: #B32216;
+}
+
+h2 {
+    color: #B32216;
+    font-size: 1.5em;
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 0.75em;
+}
+
+p {
+    font-size: 1em;
+    margin: 1em 10px; 
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #B32216;
+    color: white;
+    padding: 10px;
+}
+
+.header-logo {
+    height: 50px;
+    width: auto;
+}
+
+.data-container-wrapper {
+    overflow-x: auto; /* Włączenie przewijania w poziomie */
+    width: 100%; /* Pełna szerokość ekranu */
+}
+
+.data-container {
+    display: flex;
+    justify-content: flex-start; /* Ustawienie przycisków w jednej linii */
+    align-items: center;
+    padding: 10px;
+    gap: 20px; /* Odstęp między przyciskami */
+    min-width: max-content; /* Minimalna szerokość, aby umożliwić scrollowanie */
+}
+
+.room-btn, .add-room-btn {
+    background-color: #ffe6e6;
+    color: #B32216;
+    border: 2px solid #B32216;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    font-size: 1.2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.room-btn:hover {
+    background-color: #ffcccc;
+}
+
+.add-room-btn {
+    background-color: transparent;
+    border: 2px dashed #B32216;
+    color: #B32216;
+}
+
+.add-room-btn:hover {
+    background-color: #ffe6e6;
+}
+
+/* Kontener dla bloku z informacjami */
+.room-details {
+    display: none;
+    position: relative; /* Aby przycisk zamykania był pozycjonowany w odniesieniu do bloku */
+    border: 2px solid #B32216;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.room-details h2 {
+    color: #B32216;
+}
+
+.param-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.param-block {
+    background-color: #ffe6e6;
+    border: 2px solid #B32216;
+    border-radius: 8px;
+    padding: 10px;
+    width: 30%;
+    text-align: center;
+}
+
+.notes-section {
+    margin-top: 20px;
+    border-top: 2px solid #ccc;
+    padding-top: 10px;
+}
+
+.notes-section h3 {
+    color: #B32216;
+    margin-bottom: 10px;
+}
+
+.notes-section p {
+    font-size: 1em;
+    color: #555;
+}
+
+/* Przycisk zamykania */
+.close-btn {
+    position: absolute;
+    top: 8px;
+    right: 15px;
+    color: #B32216;
+    background-color: #f9f9f9;
+    border: none;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 2em;
+    text-align: center;
+    line-height: 50px;
+    transition: background-color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #8b1a10;
+    background-color: #f9f9f9;
+}
+
+
+
+
+
+table {
+    width: 90%; 
+    margin: 20px auto; 
+    border-collapse: collapse;
+    background-color: white;
+    color: #B01F09;
+    border: 2px solid gray;
+}
+
+th, td {
+    text-align: center;
+    padding: 8px;
+    border: 1px solid gray;
+}
+
+thead {
+    background-color: #B32216;
+    color: white;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #fff0f0;
+}
+
+footer {
+    background-color: #B32216; 
+    color: white; 
+    text-align: center;
+    padding: 10px 0; 
+    margin: 0 -20px; 
+    width: calc(100% + 40px);
+    font-size: 0.8em; 
+    box-shadow: 0 -4px 8px rgba(0,0,0,0.1); 
+}
+
+footer a {
+    color: white; 
+    text-decoration: underline; 
+    transition: color 0.3s; 
+}
+
+footer a:hover, footer a:focus {
+    color: #ffcccb; 
+    text-decoration: underline; 
+}
+
+footer a:active {
+    color: #ffa3a2; 
+}
+
+button, select {
+    margin: 5px;
+    padding: 10px 15px;
+    font-size: 1em;
+    border: none;
+    background-color: #B32216;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, select:hover {
+    background-color: #8b1a10;
+}
+
+/* New styles for control row */
+.control-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+#scrollToTopBtn, #scrollToEndBtnFixed {
+    position: fixed;
+    bottom: 20px;
+    background-color: #B32216;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+#scrollToTopBtn:hover, #scrollToEndBtnFixed:hover {
+    background-color: #8b1a10;
+}
+
+#scrollToTopBtn {
+    right: 20px;
+    display: none;
+}
+
+#scrollToEndBtnFixed {
+    right: 80px;
+}
+
+/* Additional styles for select */
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="white" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position-x: 95%;
+    background-position-y: center;
+    padding-right: 40px;
+}
+
+th.sorted {
+    background-color: #8b1a10;
+}
+
+td.sorted {
+    background-color: #FFC5BF;
+}
+
+
+
+@media (max-width: 600px) {
+    h1, h2 {
+        font-size: 1.5em;
+    }
+
+    p, th, td {
+        font-size: 0.9em;
+    }
+
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .data-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #data-inside, #data-outside {
+        width: 90%;
+    }
+
+    table {
+        font-size: 0.9em;
+        width: 100%;
+    }
+
+    .control-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    button, select {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .chart-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #temperatureChart, #humidityChart, #pressureChart {
+        width: 90%;
+        max-width: 400px;
+    }
+
+    #scrollToTopBtn, #scrollToEndBtnFixed {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    #scrollToEndBtnFixed {
+        right: 70px;
+    }
+
+    footer {
+        font-size: 0.9em;
+    }
+
+    footer {
+        font-size: 0.9em;
+    }
+}
+
+.chart-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+#temperatureChart, #humidityChart, #pressureChart {
+    width: 30%;
+    max-width: 400px;
+}
