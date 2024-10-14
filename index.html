@@ -1,85 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sensor Data Dashboard</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="res/faviconB.ico">
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
 
-    <!-- Include Firebase Database -->
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
 
     <script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-        apiKey: "AIzaSyDzPbbmREViwPxZvGJ0GVHo6Vd-0EIeHto",
-        authDomain: "smart-prusy.firebaseapp.com",
-        databaseURL: "https://smart-prusy-default-rtdb.europe-west1.firebasedatabase.app",
-        projectId: "smart-prusy",
-        storageBucket: "smart-prusy.appspot.com",
-        messagingSenderId: "69013815084",
-        appId: "1:69013815084:web:679ac5c408513b2dd8b689"
-    };
+    // Firebase configuration
+    
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     </script>
-
 </head>
 <body>
     <header>
         <div class="header-content">
             <img src="res/logoPWrGray.png" alt="WUST Logo" class="header-logo">
-            <h1>Welcome to Smart Plant</h1>
+            <h1>Inteligentny Monitor Kwiatów</h1>
         </div>
     </header>
+
     <h2>Pokoje</h2>
     <div class="data-container-wrapper">
         <div class="data-container" id="roomContainer">
-            <button class="room-btn">Pokój 1</button>
-            <button class="room-btn">Pokój 2</button>
-            <button class="room-btn">Pokój 3</button>
-            <button class="add-room-btn" id="addRoomBtn">+</button> 
-            </div>
+            <button class="room-btn" data-room="Pokój 1">Pokój 1</button>
+            <button class="room-btn" data-room="Pokój 2">Pokój 2</button>
+            <button class="room-btn" data-room="Pokój 3">Pokój 3</button>
+            <button class="add-room-btn" id="addRoomBtn">+</button> <!-- Add new room button -->
+        </div>
     </div>
+
     <div class="room-details" id="roomDetails">
-    <button class="close-btn" id="closeBtn">&times;</button> <!-- Przycisk zamykania -->
-    <h2 id="roomName">Pokój 1</h2>
-    <h3>Parametry:</h3>
-    <div class="param-container">
-        <div class="param-block">
-            <p><strong>Kwiat 1</strong></p>
-            <p>Wilgotność: 60%</p>
-            <p>Światło: 80%</p>
-            <p>Temperatura: 25°C</p>
+        <button class="close-btn" id="closeBtn">&times;</button>
+        <h2 id="roomNameContainer">
+            <input type="text" id="roomNameInput" value="Pokój 1">
+            <button id="saveRoomNameBtn">Zapisz nową nazwę</button>
+        </h2>
+
+        <h3>Parametry:</h3>
+        <div class="param-container" id="flowerContainer">
+            <div class="param-block">
+                <input type="text" class="flower-name" value="Kwiat 1">
+                <p>Wilgotność: 60%</p>
+                <p>Światło: 80%</p>
+                <p>Temperatura: 25°C</p>
+                <button class="delete-flower-btn">Usuń roślinę</button>
+            </div>
+            <div class="param-block">
+                <input type="text" class="flower-name" value="Kwiat 2">
+                <p>Wilgotność: 55%</p>
+                <p>Światło: 70%</p>
+                <p>Temperatura: 23°C</p>
+                <button class="delete-flower-btn">Usuń roślinę</button>
+            </div>
+            <div class="param-block">
+                <input type="text" class="flower-name" value="Kwiat 3">
+                <p>Wilgotność: 65%</p>
+                <p>Światło: 75%</p>
+                <p>Temperatura: 22°C</p>
+                <button class="delete-flower-btn">Usuń roślinę</button>
+            </div>
         </div>
-        <div class="param-block">
-            <p><strong>Kwiat 2</strong></p>
-            <p>Wilgotność: 55%</p>
-            <p>Światło: 70%</p>
-            <p>Temperatura: 23°C</p>
-        </div>
-        <div class="param-block">
-            <p><strong>Kwiat 3</strong></p>
-            <p>Wilgotność: 65%</p>
-            <p>Światło: 75%</p>
-            <p>Temperatura: 22°C</p>
+        <button id="addFlowerBtn">Dodaj roślinę</button>
+
+        <div class="notes-section">
+            <h3>Uwagi:</h3>
+            <p>Podlej kwiat 1</p>
         </div>
     </div>
-    <div class="notes-section">
-        <h3>Uwagi:</h3>
-        <p>Podlej kwiat 1</p>
+
+    <div class="project-description">
+        <h2>Opis projektu:</h2>
+        <p>
+            Projekt <strong>"Inteligentny Monitor Kwiatów"</strong> ma na celu ułatwienie monitorowania parametrów roślin doniczkowych w pomieszczeniach w realnym czasie. System oparty na czujnikach, połączony z bazą danych Firebase, gromadzi dane dotyczące wilgotności gleby, nasłonecznienia oraz temperatury otoczenia. 
+            Każdy pokój może zawierać wiele doniczek z roślinami, a parametry dla każdej z nich są wyświetlane osobno.
+        </p>
+        <p>
+            Użytkownik ma możliwość:
+        </p>
+        <ul>
+            <li><strong>Zmiany nazwy pokoju</strong> i indywidualnych kwiatów.</li>
+            <li><strong>Dodawania nowych kwiatów i pokoi</strong>.</li>
+            <li><strong>Usuwania kwiatów</strong>, gdy nie są już monitorowane.</li>
+            <li><strong>Otrzymywania uwag</strong> dotyczących konieczności podlewania roślin na podstawie bieżących danych.</li>
+        </ul>
+        <p>
+            System pozwala na <strong>personalizację</strong> i łatwe zarządzanie roślinami w różnych pomieszczeniach, dzięki czemu użytkownik zawsze ma kontrolę nad stanem swoich kwiatów.
+        </p>
     </div>
-</div>
 
     <footer>
         <p>&copy; 2024. Created by <a href="https://github.com/DieMon-dev">DieMon-dev</a>.</p>
     </footer>
-    <button id="scrollToTopBtn" onclick="scrollToTop()">&#8679;</button>
-    <button id="scrollToEndBtnFixed" onclick="scrollToEndOfTable()">&#8681;</button>
-    <script src="script.js"></script>
+
     <script src="script.js"></script>
 </body>
 </html>

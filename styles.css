@@ -1,3 +1,4 @@
+/* Global styles */
 body, html {
     margin: 0;
     padding: 0 10px; 
@@ -6,6 +7,7 @@ body, html {
     color: #333;
 }
 
+/* Header styles */
 header {
     padding: 0; 
     margin: 0 -20px; 
@@ -22,10 +24,6 @@ h1 {
     text-align: center;
 }
 
-strong {
-    color: #B32216;
-}
-
 h2 {
     color: #B32216;
     font-size: 1.5em;
@@ -33,11 +31,16 @@ h2 {
     margin-bottom: 0.75em;
 }
 
+strong {
+    color: #B32216;
+}
+
 p {
     font-size: 1em;
     margin: 1em 10px; 
 }
 
+/* Header content */
 .header-content {
     display: flex;
     justify-content: space-between;
@@ -52,18 +55,19 @@ p {
     width: auto;
 }
 
+/* Room and button styles */
 .data-container-wrapper {
-    overflow-x: auto; /* Włączenie przewijania w poziomie */
-    width: 100%; /* Pełna szerokość ekranu */
+    overflow-x: auto;
+    width: 100%;
 }
 
 .data-container {
     display: flex;
-    justify-content: flex-start; /* Ustawienie przycisków w jednej linii */
+    justify-content: flex-start;
     align-items: center;
     padding: 10px;
-    gap: 20px; /* Odstęp między przyciskami */
-    min-width: max-content; /* Minimalna szerokość, aby umożliwić scrollowanie */
+    gap: 20px;
+    min-width: max-content;
 }
 
 .room-btn, .add-room-btn {
@@ -88,17 +92,16 @@ p {
 .add-room-btn {
     background-color: transparent;
     border: 2px dashed #B32216;
-    color: #B32216;
 }
 
 .add-room-btn:hover {
     background-color: #ffe6e6;
 }
 
-/* Kontener dla bloku z informacjami */
+/* Room details block */
 .room-details {
     display: none;
-    position: relative; /* Aby przycisk zamykania był pozycjonowany w odniesieniu do bloku */
+    position: relative;
     border: 2px solid #B32216;
     border-radius: 10px;
     padding: 20px;
@@ -113,8 +116,11 @@ p {
 
 .param-container {
     display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 10px;
 }
 
 .param-block {
@@ -122,10 +128,12 @@ p {
     border: 2px solid #B32216;
     border-radius: 8px;
     padding: 10px;
-    width: 30%;
+    width: 180px;
     text-align: center;
+    min-width: 180px;
 }
 
+/* Notes section */
 .notes-section {
     margin-top: 20px;
     border-top: 2px solid #ccc;
@@ -142,7 +150,7 @@ p {
     color: #555;
 }
 
-/* Przycisk zamykania */
+/* Close button */
 .close-btn {
     position: absolute;
     top: 8px;
@@ -154,7 +162,6 @@ p {
     height: 50px;
     cursor: pointer;
     font-size: 2em;
-    text-align: center;
     line-height: 50px;
     transition: background-color 0.3s ease;
 }
@@ -164,13 +171,41 @@ p {
     background-color: #f9f9f9;
 }
 
+/* Input field and button styles */
+input[type="text"] {
+    border: 2px solid #B32216;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 1.1em;
+    width: 150px;
+    margin-bottom: 10px;
+    transition: border-color 0.3s ease;
+}
 
+input[type="text"]:focus {
+    border-color: #8b1a10;
+}
 
+#saveRoomNameBtn, .delete-flower-btn, #addFlowerBtn {
+    margin-top: 10px;
+    padding: 5px 10px;
+    font-size: 1em;
+    background-color: #B32216;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
+#saveRoomNameBtn:hover, .delete-flower-btn:hover, #addFlowerBtn:hover {
+    background-color: #8b1a10;
+}
 
+/* Table styles */
 table {
-    width: 90%; 
-    margin: 20px auto; 
+    width: 90%;
+    margin: 20px auto;
     border-collapse: collapse;
     background-color: white;
     color: #B01F09;
@@ -192,32 +227,33 @@ tbody tr:nth-child(odd) {
     background-color: #fff0f0;
 }
 
+/* Footer styles */
 footer {
-    background-color: #B32216; 
-    color: white; 
+    background-color: #B32216;
+    color: white;
     text-align: center;
-    padding: 10px 0; 
-    margin: 0 -20px; 
+    padding: 10px 0;
+    margin: 0 -20px;
     width: calc(100% + 40px);
-    font-size: 0.8em; 
-    box-shadow: 0 -4px 8px rgba(0,0,0,0.1); 
+    font-size: 0.8em;
+    box-shadow: 0 -4px 8px rgba(0,0,0,0.1);
 }
 
 footer a {
-    color: white; 
-    text-decoration: underline; 
-    transition: color 0.3s; 
+    color: white;
+    text-decoration: underline;
+    transition: color 0.3s;
 }
 
 footer a:hover, footer a:focus {
-    color: #ffcccb; 
-    text-decoration: underline; 
+    color: #ffcccb;
 }
 
 footer a:active {
-    color: #ffa3a2; 
+    color: #ffa3a2;
 }
 
+/* Button and select styles */
 button, select {
     margin: 5px;
     padding: 10px 15px;
@@ -234,14 +270,17 @@ button:hover, select:hover {
     background-color: #8b1a10;
 }
 
-/* New styles for control row */
-.control-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 10px 0;
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="white" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: 95% center;
+    padding-right: 40px;
 }
 
+/* Scroll buttons */
 #scrollToTopBtn, #scrollToEndBtnFixed {
     position: fixed;
     bottom: 20px;
@@ -270,28 +309,7 @@ button:hover, select:hover {
     right: 80px;
 }
 
-/* Additional styles for select */
-select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-image: url('data:image/svg+xml;utf8,<svg fill="white" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
-    background-repeat: no-repeat;
-    background-position-x: 95%;
-    background-position-y: center;
-    padding-right: 40px;
-}
-
-th.sorted {
-    background-color: #8b1a10;
-}
-
-td.sorted {
-    background-color: #FFC5BF;
-}
-
-
-
+/* Responsive design */
 @media (max-width: 600px) {
     h1, h2 {
         font-size: 1.5em;
@@ -311,10 +329,6 @@ td.sorted {
         align-items: center;
     }
 
-    #data-inside, #data-outside {
-        width: 90%;
-    }
-
     table {
         font-size: 0.9em;
         width: 100%;
@@ -330,46 +344,3 @@ td.sorted {
         margin: 5px 0;
     }
 
-    .chart-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #temperatureChart, #humidityChart, #pressureChart {
-        width: 90%;
-        max-width: 400px;
-    }
-
-    #scrollToTopBtn, #scrollToEndBtnFixed {
-        width: 40px;
-        height: 40px;
-        font-size: 14px;
-    }
-
-    #scrollToEndBtnFixed {
-        right: 70px;
-    }
-
-    footer {
-        font-size: 0.9em;
-    }
-
-    footer {
-        font-size: 0.9em;
-    }
-}
-
-.chart-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 90%;
-    max-width: 1200px;
-    margin: 20px auto;
-}
-
-#temperatureChart, #humidityChart, #pressureChart {
-    width: 30%;
-    max-width: 400px;
-}
