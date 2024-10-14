@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensor Data Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="res/faviconB.ico">
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+
+    <!-- Include Firebase Database -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+
+    <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyDzPbbmREViwPxZvGJ0GVHo6Vd-0EIeHto",
+        authDomain: "smart-prusy.firebaseapp.com",
+        databaseURL: "https://smart-prusy-default-rtdb.europe-west1.firebasedatabase.app",
+        projectId: "smart-prusy",
+        storageBucket: "smart-prusy.appspot.com",
+        messagingSenderId: "69013815084",
+        appId: "1:69013815084:web:679ac5c408513b2dd8b689"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    </script>
+
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="res/logoPWrGray.png" alt="WUST Logo" class="header-logo">
+            <h1>Welcome to Smart Plant</h1>
+        </div>
+    </header>
+    <h2>Pokoje</h2>
+    <div class="data-container-wrapper">
+        <div class="data-container" id="roomContainer">
+            <button class="room-btn">Pokój 1</button>
+            <button class="room-btn">Pokój 2</button>
+            <button class="room-btn">Pokój 3</button>
+            <button class="add-room-btn" id="addRoomBtn">+</button> 
+            </div>
+    </div>
+    <div class="room-details" id="roomDetails">
+    <button class="close-btn" id="closeBtn">&times;</button> <!-- Przycisk zamykania -->
+    <h2 id="roomName">Pokój 1</h2>
+    <h3>Parametry:</h3>
+    <div class="param-container">
+        <div class="param-block">
+            <p><strong>Kwiat 1</strong></p>
+            <p>Wilgotność: 60%</p>
+            <p>Światło: 80%</p>
+            <p>Temperatura: 25°C</p>
+        </div>
+        <div class="param-block">
+            <p><strong>Kwiat 2</strong></p>
+            <p>Wilgotność: 55%</p>
+            <p>Światło: 70%</p>
+            <p>Temperatura: 23°C</p>
+        </div>
+        <div class="param-block">
+            <p><strong>Kwiat 3</strong></p>
+            <p>Wilgotność: 65%</p>
+            <p>Światło: 75%</p>
+            <p>Temperatura: 22°C</p>
+        </div>
+    </div>
+    <div class="notes-section">
+        <h3>Uwagi:</h3>
+        <p>Podlej kwiat 1</p>
+    </div>
+</div>
+
+    <footer>
+        <p>&copy; 2024. Created by <a href="https://github.com/DieMon-dev">DieMon-dev</a>.</p>
+    </footer>
+    <button id="scrollToTopBtn" onclick="scrollToTop()">&#8679;</button>
+    <button id="scrollToEndBtnFixed" onclick="scrollToEndOfTable()">&#8681;</button>
+    <script src="script.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
